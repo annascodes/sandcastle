@@ -34,3 +34,83 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## 
+npm install @prisma/client @prisma/adapter-pg pg dotenv
+npm install -D prisma
+
+npx prisma init
+
+npm uninstall prisma @prisma/client @prisma/adapter-pg 
+
+npm install @prisma/client@7 @prisma/adapter-pg@7 pg dotenv
+npm install -D prisma@7
+
+npx prisma -v
+
+
+## config
+import "dotenv/config";
+import { defineConfig, env } from "prisma/config";
+
+export default defineConfig({
+  schema: "prisma/schema.prisma",
+
+  migrations: {
+    path: "prisma/migrations",
+  },
+
+  datasource: {
+    url: env("DATABASE_URL"),
+  },
+});
+
+## initial prisma\schema.prisma
+generator client {
+  provider = "prisma-client"
+  output   = "../app/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+## 
+npx prisma db push
+npx prisma generate
+
+## lib/prisma.ts
+import { PrismaPg } from "@prisma/adapter-pg";
+import { PrismaClient } from "@/app/generated/prisma/client";
+
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL!,
+});
+
+const globalForPrisma = globalThis as unknown as {
+  prisma: PrismaClient | undefined;
+};
+
+export const prisma =
+  globalForPrisma.prisma ??
+  new PrismaClient({
+    adapter,
+  });
+
+if (process.env.NODE_ENV !== "production") {
+  globalForPrisma.prisma = prisma;
+}
+
+
+## shadcn init
+
+npx shadcn@latest init
+
+npm install next-themes
