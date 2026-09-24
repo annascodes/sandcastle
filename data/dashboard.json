@@ -1,0 +1,30 @@
+{
+  "Dashboard": {
+    "SidebarBtns": [
+      {
+        "title": "Overview",
+        "key": "overview",
+        "href": "/dashboard",
+        "icon": "LayoutDashboard"
+      },
+      {
+        "title": "Projects",
+        "key": "projects",
+        "href": "/dashboard/projects",
+        "icon": "FolderKanban"
+      },
+      {
+        "title": "Profile",
+        "key": "profile",
+        "href": "/dashboard/profile",
+        "icon": "User"
+      },
+      {
+        "title": "Settings",
+        "key": "settings",
+        "href": "/dashboard/settings",
+        "icon": "Settings"
+      }
+    ]
+  }
+}

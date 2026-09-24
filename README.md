@@ -114,3 +114,6 @@ if (process.env.NODE_ENV !== "production") {
 npx shadcn@latest init
 
 npm install next-themes
+
+## tanstack query
+npm install @tanstack/react-query
