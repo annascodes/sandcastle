@@ -9,6 +9,15 @@
 * 🟢 You can import this file directly.
 */
 
+export const ProjectRole = {
+  OWNER: 'OWNER',
+  ADMIN: 'ADMIN',
+  MEMBER: 'MEMBER'
+} as const
+
+export type ProjectRole = (typeof ProjectRole)[keyof typeof ProjectRole]
+
+
 export const TaskStatus = {
   TODO: 'TODO',
   INPROGRESS: 'INPROGRESS',
@@ -19,9 +28,9 @@ export type TaskStatus = (typeof TaskStatus)[keyof typeof TaskStatus]
 
 
 export const TaskPriority = {
-  NORMAL: 'NORMAL',
+  LOW: 'LOW',
   MEDIUM: 'MEDIUM',
-  HARD: 'HARD'
+  URGENT: 'URGENT'
 } as const
 
 export type TaskPriority = (typeof TaskPriority)[keyof typeof TaskPriority]

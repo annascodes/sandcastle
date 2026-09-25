@@ -33,7 +33,17 @@ export type Session = Prisma.SessionModel
  */
 export type Project = Prisma.ProjectModel
 /**
+ * Model ProjectMember
+ * 
+ */
+export type ProjectMember = Prisma.ProjectMemberModel
+/**
  * Model Task
  * 
  */
 export type Task = Prisma.TaskModel
+/**
+ * Model Comment
+ * 
+ */
+export type Comment = Prisma.CommentModel

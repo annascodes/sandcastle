@@ -11,5 +11,7 @@
 export type * from './models/User'
 export type * from './models/Session'
 export type * from './models/Project'
+export type * from './models/ProjectMember'
 export type * from './models/Task'
+export type * from './models/Comment'
 export type * from './commonInputTypes'

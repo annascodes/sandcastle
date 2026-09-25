@@ -29,7 +29,7 @@ const DashSidebar = () => {
             className="w-full justify-start "
             
           >
-            <Link href={btn.href} className="border-0 w-full font-normal text-xs border-stone-700 flex items-center justify-start flex-row">
+            <Link href={btn.href} className="border-0 w-full font-normal text-sm border-stone-700 flex items-center justify-start flex-row">
               <Icon className="mr-2 h-4 w-4 opacity-50" />
               {btn.title}
             </Link>
